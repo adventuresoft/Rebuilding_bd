@@ -44,7 +44,7 @@
                 <div class="flex flex-col items-center justify-center">
                     <div class="flex items-center gap-2 font-black text-base tracking-tight text-white">
                         <div class="bg-white px-1.5 py-0.5 rounded shadow-xs flex items-center justify-center shrink-0">
-                            <img src="{{ asset('build/assets/asl.png') }}" alt="Adventure Soft" class="h-5 w-auto object-contain">
+                            <img src="{{ asset('asl.png') }}" alt="Adventure Soft" class="h-5 w-auto object-contain">
                         </div>
                         <span>Adventure Soft</span>
                     </div>
