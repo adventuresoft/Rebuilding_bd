@@ -148,7 +148,7 @@
     <!-- NEW HOMEPAGE DESIGN (EXACT MATCH WITH SCREENSHOT) -->
     <main>
         <!-- HERO BANNER SECTION (PHOTO CARD) -->
-        <section class="relative overflow-hidden bg-slate-900 flex items-center shadow-md" style="min-height: 50vh; background-image: url('{{ asset('build/assets/photo-card1.jpg') }}'); background-size: cover; background-position: center 45%;">
+        <section class="relative overflow-hidden bg-slate-900 flex items-center shadow-md" style="min-height: 50vh; background-image: url('{{ asset('photo-card1.jpg') }}'); background-size: cover; background-position: center 45%;">
             <!-- Editorial Dark Gradient Overlay for High Readability -->
             <div class="absolute inset-0 z-0" style="background: linear-gradient(to right, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.40) 35%, rgba(0, 0, 0, 0) 60%);"></div>
 
@@ -281,7 +281,7 @@
                         <div class="rounded-2xl p-5 sm:p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1" style="background-color: #ffffff !important; border: 1px solid #e2e8f0 !important; border-radius: 20px !important; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04) !important;">
                             <div>
                                 <div class="rounded-xl overflow-hidden mb-5 h-48 sm:h-52 w-full bg-slate-100">
-                                    <img src="{{ asset('build/assets/photo-card2.jpg') }}" alt="'আমার পাঠশালা' স্কুল ফান্ড" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                                    <img src="{{ asset('photo-card2.jpg') }}" alt="'আমার পাঠশালা' স্কুল ফান্ড" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
                                 </div>
                                 <h4 class="text-lg sm:text-xl font-extrabold text-slate-900 tracking-tight mb-2.5" style="color: #0f172a;">'আমার পাঠশালা' স্কুল ফান্ড</h4>
                                 <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-semibold mb-5" style="color: #475569;">
@@ -299,7 +299,7 @@
                         <div class="rounded-2xl p-5 sm:p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1" style="background-color: #ffffff !important; border: 1px solid #e2e8f0 !important; border-radius: 20px !important; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04) !important;">
                             <div>
                                 <div class="rounded-xl overflow-hidden mb-5 h-48 sm:h-52 w-full bg-slate-100">
-                                    <img src="{{ asset('build/assets/photo-card3.jpg') }}" alt="খাবারের দানামাত্র জুটছে না ঘরে" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                                    <img src="{{ asset('photo-card3.jpg') }}" alt="খাবারের দানামাত্র জুটছে না ঘরে" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
                                 </div>
                                 <h4 class="text-lg sm:text-xl font-extrabold text-slate-900 tracking-tight mb-2.5" style="color: #0f172a;">খাবারের দানামাত্র জুটছে না ঘরে</h4>
                                 <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-semibold mb-5" style="color: #475569;">
@@ -317,7 +317,7 @@
                         <div class="rounded-2xl p-5 sm:p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1" style="background-color: #ffffff !important; border: 1px solid #e2e8f0 !important; border-radius: 20px !important; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04) !important;">
                             <div>
                                 <div class="rounded-xl overflow-hidden mb-5 h-48 sm:h-52 w-full bg-slate-100">
-                                    <img src="{{ asset('build/assets/photo-card4.jpg') }}" alt="'বন্যাদুর্গতদের' পাশে আমরা" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                                    <img src="{{ asset('photo-card4.jpg') }}" alt="'বন্যাদুর্গতদের' পাশে আমরা" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
                                 </div>
                                 <h4 class="text-lg sm:text-xl font-extrabold text-slate-900 tracking-tight mb-2.5" style="color: #0f172a;">'বন্যাদুর্গতদের' পাশে আমরা</h4>
                                 <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-semibold mb-5" style="color: #475569;">
@@ -355,7 +355,7 @@
                         <div class="rounded-2xl p-5 sm:p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1" style="background-color: #ffffff !important; border: 1px solid #e2e8f0 !important; border-radius: 20px !important; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04) !important;">
                             <div>
                                 <div class="rounded-xl overflow-hidden mb-5 h-48 sm:h-52 w-full bg-slate-100">
-                                    <img src="{{ asset('build/assets/photo-card4.jpg') }}" alt="বন্যাদুর্গতদের সাহায্য" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                                    <img src="{{ asset('photo-card4.jpg') }}" alt="বন্যাদুর্গতদের সাহায্য" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
                                 </div>
                                 <h4 class="text-lg sm:text-xl font-extrabold text-slate-900 tracking-tight mb-3" style="color: #0f172a;">বন্যাদুর্গতদের সাহায্য</h4>
                                 <div class="text-xs sm:text-sm font-bold text-slate-700 mb-2" style="color: #334155;">45% Raised</div>
@@ -374,7 +374,7 @@
                         <div class="rounded-2xl p-5 sm:p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1" style="background-color: #ffffff !important; border: 1px solid #e2e8f0 !important; border-radius: 20px !important; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04) !important;">
                             <div>
                                 <div class="rounded-xl overflow-hidden mb-5 h-48 sm:h-52 w-full bg-slate-100">
-                                    <img src="{{ asset('build/assets/photo-card2.jpg') }}" alt="'আমার পাঠশালা' স্কুল ফান্ড" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                                    <img src="{{ asset('photo-card2.jpg') }}" alt="'আমার পাঠশালা' স্কুল ফান্ড" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
                                 </div>
                                 <h4 class="text-lg sm:text-xl font-extrabold text-slate-900 tracking-tight mb-3" style="color: #0f172a;">'আমার পাঠশালা' স্কুল ফান্ড</h4>
                                 <div class="text-xs sm:text-sm font-bold text-slate-700 mb-2" style="color: #334155;">18% Raised</div>
