@@ -4,8 +4,10 @@ use App\Http\Controllers\Admin\AuthController as AdminAuthController;
 use App\Http\Controllers\Admin\BenefitController as AdminBenefitController;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\Admin\JulyFighterController as AdminJulyFighterController;
+use App\Http\Controllers\Admin\VolunteerController as AdminVolunteerController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LocationController;
+use App\Http\Controllers\VolunteerApplicationController;
 use App\Http\Controllers\Portal\AuthController as PortalAuthController;
 use App\Http\Controllers\Portal\DashboardController as PortalDashboardController;
 use App\Http\Controllers\Portal\ProfileController as PortalProfileController;
@@ -31,6 +33,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('search', [AdminJulyFighterController::class, 'search'])->name('search');
 
         Route::resource('benefits', AdminBenefitController::class);
+        Route::resource('volunteers', AdminVolunteerController::class)->only(['index', 'create', 'store', 'show']);
     });
 });
 
@@ -54,3 +57,7 @@ Route::get('/locations/districts/{divisionId}', [LocationController::class, 'get
 Route::get('/locations/thanas/{districtId}', [LocationController::class, 'getThanas']);
 Route::get('/locations/post-offices/{thanaId}', [LocationController::class, 'getPostOffices']);
 Route::get('/locations/unions/{thanaId}', [LocationController::class, 'getUnions']);
+
+// Public Volunteer Application
+Route::get('/volunteer-apply', [VolunteerApplicationController::class, 'create'])->name('volunteer.apply');
+Route::post('/volunteer-apply', [VolunteerApplicationController::class, 'store'])->name('volunteer.apply.store');

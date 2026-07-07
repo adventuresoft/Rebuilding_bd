@@ -154,18 +154,18 @@
 
             <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-10 sm:py-12 md:py-14 text-left w-full">
                 <div class="max-w-2xl space-y-5 sm:space-y-6">
-                    <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-black text-white tracking-tight leading-[1.15] drop-shadow-md">
+                    <h2 class="text-base sm:text-lg md:text-2xl lg:text-[26px] font-black text-white tracking-tight leading-[1.15] drop-shadow-md">
                         আপনার অনুদান, একটি শিশুর<br class="hidden sm:inline"> জীবন বদলে দিতে পারে
                     </h2>
-                    <p class="text-base sm:text-lg md:text-xl font-bold leading-relaxed max-w-xl drop-shadow" style="color: #ffffff !important;">
+                    <p class="text-xs sm:text-sm md:text-base font-bold leading-relaxed max-w-xl drop-shadow" style="color: #ffffff !important;">
                         আমরা সুবিধাবঞ্চিত শিশুদের জন্য শিক্ষা, চিকিৎসা ও নিরাপদ আশ্রয় নিশ্চিত করি।
                     </p>
                     <div class="pt-2 flex flex-wrap items-center gap-4">
-                        <a href="#projects" class="rounded-xl bg-white hover:bg-slate-100 text-slate-950 px-6 py-3.5 text-sm sm:text-base font-bold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 active:scale-95 flex items-center justify-center" style="background-color: #ffffff; color: #0f172a;">
+                        <a href="#projects" class="rounded-xl bg-white hover:bg-slate-100 text-slate-950 px-4 py-2.5 text-xs sm:text-sm font-bold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 active:scale-95 flex items-center justify-center" style="background-color: #ffffff; color: #0f172a;">
                             <span>আমাদের প্রজেক্টগুলো দেখুন</span>
                         </a>
-                        <a href="#volunteer" class="rounded-xl bg-transparent hover:bg-white/10 border-2 border-white text-white px-6 py-3.5 text-sm sm:text-base font-bold transition-all duration-300 transform hover:-translate-y-0.5 active:scale-95 flex items-center justify-center" style="border-color: #ffffff; color: #ffffff;">
-                            <span>স্বেচ্ছাসেবী হোন</span>
+                        <a href="{{ route('volunteer.apply') }}" class="rounded-xl bg-transparent hover:bg-white/10 border-2 border-white text-white px-4 py-2.5 text-xs sm:text-sm font-bold transition-all duration-300 transform hover:-translate-y-0.5 active:scale-95 flex items-center justify-center" style="border-color: #ffffff; color: #ffffff;">
+                            <span>স্বেচ্ছাসেবীর জন্য আবেদন</span>
                         </a>
                     </div>
                 </div>

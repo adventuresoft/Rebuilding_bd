@@ -2,6 +2,7 @@
     $currentRoute = request()->route()?->getName() ?? '';
     $isPeopleInfoActive = in_array($currentRoute, ['admin.july-fighter.create', 'admin.july-fighter.index', 'admin.july-fighter.show', 'admin.search']);
     $isBenefitsActive = in_array($currentRoute, ['admin.benefits.index', 'admin.benefits.create', 'admin.benefits.edit', 'admin.benefits.show']);
+    $isVolunteerActive = in_array($currentRoute, ['admin.volunteers.index', 'admin.volunteers.create', 'admin.volunteers.show']);
 @endphp
 
 <div class="min-h-screen w-full flex flex-col bg-[#F8F9FA]">
@@ -100,6 +101,36 @@
                         </a>
                     </div>
                 </div>
+
+                <!-- Volunteer Collapsible Menu -->
+                <div class="space-y-1.5 pt-1">
+                    <button type="button" onclick="toggleVolunteerMenu()" id="volunteerMenuHeader"
+                            class="w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs transition cursor-pointer {{ $isVolunteerActive ? 'bg-[#DDE5ED] text-slate-900 font-bold shadow-2xs' : 'font-semibold text-slate-700 hover:bg-slate-200/60 hover:text-slate-900' }}">
+                        <div class="flex items-center gap-2.5">
+                            <span class="text-base">🙋</span>
+                            <span class="text-xs sm:text-sm font-bold">Volunteer</span>
+                        </div>
+                        <span id="volunteerMenuArrow" class="text-xs font-black text-slate-600">
+                            @if ($isVolunteerActive)
+                                &#709;
+                            @else
+                                &lt;
+                            @endif
+                        </span>
+                    </button>
+
+                    <!-- Submenu Items -->
+                    <div id="volunteerMenuSub" class="{{ $isVolunteerActive ? 'block' : 'hidden' }} pl-7 pt-1.5 pb-2 space-y-2.5">
+                        <a href="{{ route('admin.volunteers.create') }}" class="flex items-center gap-3 text-xs font-extrabold {{ $currentRoute === 'admin.volunteers.create' ? 'text-[#00551c]' : 'text-slate-700 hover:text-[#00551c]' }}">
+                            <span class="w-2 h-2 rounded-full {{ $currentRoute === 'admin.volunteers.create' ? 'bg-[#00551c]' : 'bg-slate-800' }} flex-shrink-0"></span>
+                            <span>Add New</span>
+                        </a>
+                        <a href="{{ route('admin.volunteers.index') }}" class="flex items-center gap-3 text-xs font-extrabold {{ in_array($currentRoute, ['admin.volunteers.index', 'admin.volunteers.show']) ? 'text-[#00551c]' : 'text-slate-700 hover:text-[#00551c]' }}">
+                            <span class="w-2 h-2 rounded-full {{ in_array($currentRoute, ['admin.volunteers.index', 'admin.volunteers.show']) ? 'bg-[#00551c]' : 'bg-slate-800' }} flex-shrink-0"></span>
+                            <span>Volunteer List</span>
+                        </a>
+                    </div>
+                </div>
             </nav>
 
             <script>
@@ -126,6 +157,25 @@
                 const sub = document.getElementById('benefitsMenuSub');
                 const header = document.getElementById('benefitsMenuHeader');
                 const arrow = document.getElementById('benefitsMenuArrow');
+                if (sub.classList.contains('hidden')) {
+                    sub.classList.remove('hidden');
+                    sub.classList.add('block');
+                    header.classList.add('bg-[#DDE5ED]', 'text-slate-900', 'font-bold', 'shadow-2xs');
+                    header.classList.remove('font-semibold');
+                    arrow.innerHTML = '&#709;';
+                } else {
+                    sub.classList.add('hidden');
+                    sub.classList.remove('block');
+                    header.classList.remove('bg-[#DDE5ED]', 'text-slate-900', 'font-bold', 'shadow-2xs');
+                    header.classList.add('font-semibold');
+                    arrow.innerHTML = '&lt;';
+                }
+            }
+
+            function toggleVolunteerMenu() {
+                const sub = document.getElementById('volunteerMenuSub');
+                const header = document.getElementById('volunteerMenuHeader');
+                const arrow = document.getElementById('volunteerMenuArrow');
                 if (sub.classList.contains('hidden')) {
                     sub.classList.remove('hidden');
                     sub.classList.add('block');
