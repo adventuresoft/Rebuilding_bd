@@ -68,14 +68,14 @@
     </header>
 
     {{-- ─── Form Card ─── --}}
-    <main class="max-w-3xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
 
         <!-- Page Title -->
         <div class="mb-8 text-center">
             <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-[#00551c]/10 mb-4">
                 <span class="text-2xl">🙋</span>
             </div>
-            <h1 class="text-2xl sm:text-3xl font-black text-slate-800">স্বেচ্ছাসেবী আবেদন ফর্ম</h1>
+            <h1 class="text-lg sm:text-xl font-black text-slate-800">স্বেচ্ছাসেবী আবেদন ফর্ম</h1>
             <p class="text-sm text-slate-500 font-semibold mt-2">সকল তথ্য সঠিকভাবে পূরণ করুন।</p>
         </div>
 
