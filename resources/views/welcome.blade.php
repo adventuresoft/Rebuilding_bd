@@ -65,16 +65,51 @@
                             <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
                         </svg>
                     </a>
-                    <a href="#services" class="hover:text-white transition">Services</a>
-                    <a href="#about" class="hover:text-white transition">About Archive</a>
-                    <a href="{{ route('portal.login') }}" class="hover:text-white transition">Citizen Login</a>
+                    <a href="#about" class="hover:text-white transition">About</a>
+                    <a href="#priorities" class="hover:text-white transition">Priorities</a>
+                    <a href="#projects" class="hover:text-white transition">Projects</a>
+                    <a href="#gallery" class="hover:text-white transition">Gallery</a>
+                    <a href="#resources" class="hover:text-white transition">Resources</a>
+                    <a href="#sites" class="hover:text-white transition">Sites</a>
+                    <a href="#contact" class="hover:text-white transition">Contact</a>
                 </nav>
 
-                <!-- Admin Access Button -->
+                <!-- Admin Access Button / Logged-in Badge -->
                 <div>
-                    <a href="{{ route('admin.login') }}" class="inline-flex items-center justify-center rounded bg-white hover:bg-emerald-50 px-2.5 py-0.5 text-[11px] font-extrabold text-[#00551c] shadow-2xs transition transform hover:-translate-y-0.5 active:scale-95">
-                        Admin Access →
-                    </a>
+                    @if(Auth::guard('web')->check())
+                        {{-- Admin is logged in — show badge with time --}}
+                        <div class="inline-flex items-center gap-2 rounded bg-white/10 border border-white/30 px-2.5 py-1 text-[11px] font-bold text-white shadow-sm">
+                            <span class="flex items-center gap-1">
+                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                                <span class="text-emerald-200">Admin:</span>
+                                <span class="font-extrabold text-white">{{ Auth::guard('web')->user()->name ?? 'Admin' }}</span>
+                            </span>
+                            <span class="text-white/40">|</span>
+                            <span id="admin-live-time" class="font-mono text-[10px] text-emerald-200 tracking-wider"></span>
+                            <a href="{{ route('admin.dashboard') }}" class="ml-1 bg-emerald-400 hover:bg-emerald-300 text-[#00551c] font-extrabold px-2 py-0.5 rounded text-[10px] transition">
+                                Dashboard →
+                            </a>
+                        </div>
+                        <script>
+                            (function() {
+                                function updateAdminTime() {
+                                    const el = document.getElementById('admin-live-time');
+                                    if (!el) return;
+                                    const now = new Date();
+                                    const h = String(now.getHours()).padStart(2, '0');
+                                    const m = String(now.getMinutes()).padStart(2, '0');
+                                    const s = String(now.getSeconds()).padStart(2, '0');
+                                    el.textContent = h + ':' + m + ':' + s;
+                                }
+                                updateAdminTime();
+                                setInterval(updateAdminTime, 1000);
+                            })();
+                        </script>
+                    @else
+                        <a href="{{ route('admin.login') }}" class="inline-flex items-center justify-center rounded bg-white hover:bg-emerald-50 px-2.5 py-0.5 text-[11px] font-extrabold text-[#00551c] shadow-2xs transition transform hover:-translate-y-0.5 active:scale-95">
+                            Admin Access →
+                        </a>
+                    @endif
                 </div>
             </div>
         </div>

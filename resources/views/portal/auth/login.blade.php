@@ -65,7 +65,7 @@
 
             <!-- Top Header & Logo -->
             <div class="text-center mb-5">
-                <img src="{{ asset('govt-bd-logo.png') }}" alt="Govt Logo" class="w-12 h-12 mx-auto mb-1.5 object-contain">
+                <img src="{{ asset('logo-home.png') }}" alt="Govt Logo" class="w-12 h-12 mx-auto mb-1.5 object-contain">
                 <div class="text-[11px] font-extrabold text-[#00551c]">নাগরিক পোর্টাল (Citizen Portal)</div>
                 <h2 class="text-lg sm:text-xl font-black text-slate-800 mt-0.5">লগইন করুন</h2>
             </div>

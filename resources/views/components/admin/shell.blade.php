@@ -15,13 +15,13 @@
         <!-- SIDEBAR -->
         <aside class="w-64 bg-[#F4F6F8] border-r border-slate-200/80 flex flex-col justify-between flex-shrink-0 select-none print:hidden">
             <!-- Sidebar Top Brand -->
-            <div class="h-14 px-4 bg-white border-b border-slate-200/80 flex items-center gap-3 shadow-2xs">
-                <img src="{{ asset('govt-bd-logo.png') }}" alt="Crest" class="w-8 h-8 object-contain">
+            <a href="{{ route('home') }}" class="h-14 px-4 bg-white border-b border-slate-200/80 flex items-center gap-3 shadow-2xs hover:bg-emerald-50 transition-colors duration-200 cursor-pointer">
+                <img src="{{ asset('logo-home.png') }}" alt="Crest" class="w-8 h-8 object-contain">
                 <div>
                     <div class="text-xs font-black tracking-wider text-[#00551c]">Rebuilding Bangladesh</div>
                     <div class="text-[10px] font-bold text-slate-500">Rebuilding Bangladesh Archive</div>
                 </div>
-            </div>
+            </a>
 
             <!-- Sidebar Navigation Menu -->
             <nav class="flex-1 overflow-y-auto p-3 space-y-2">

@@ -58,7 +58,7 @@
     <header class="bg-[#00551c] shadow-sm">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
             <a href="{{ route('home') }}" class="flex items-center gap-3">
-                <img src="{{ asset('govt-bd-logo.png') }}" alt="Logo" class="w-8 h-8 object-contain">
+                <img src="{{ asset('logo-home.png') }}" alt="Logo" class="w-8 h-8 object-contain">
                 <span class="text-white text-sm font-extrabold tracking-wide">Rebuilding Bangladesh</span>
             </a>
             <a href="{{ route('home') }}" class="text-emerald-200 hover:text-white text-xs font-bold transition flex items-center gap-1">
