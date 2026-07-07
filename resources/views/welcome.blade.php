@@ -29,7 +29,7 @@
 
     <!-- OFFICIAL GOVT TOPBAR -->
     <div class="bg-[#00551c] text-white text-[11px] font-medium py-1.5 px-4 border-b border-emerald-800">
-        <div class="max-w-6xl mx-auto flex items-center justify-start gap-4">
+        <div class="max-w-6xl mx-auto flex items-center justify-end gap-4">
             <div class="flex items-center gap-2 text-emerald-100 font-medium">
                 <span>{{ date('l, d M Y') }}</span>
                 <span class="text-emerald-400 font-bold">|</span>
