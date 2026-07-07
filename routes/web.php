@@ -61,3 +61,64 @@ Route::get('/locations/unions/{thanaId}', [LocationController::class, 'getUnions
 // Public Volunteer Application
 Route::get('/volunteer-apply', [VolunteerApplicationController::class, 'create'])->name('volunteer.apply');
 Route::post('/volunteer-apply', [VolunteerApplicationController::class, 'store'])->name('volunteer.apply.store');
+
+// Run Migration via URL (secured with key)
+Route::get('/migrate_run', function () {
+    $secretKey = 'july2024secret'; // 🔑 এই key টা পরিবর্তন করো
+
+    if (request('key') !== $secretKey) {
+        abort(403, '🚫 Unauthorized! Secret key required.');
+    }
+
+    try {
+        \Artisan::call('migrate', ['--force' => true]);
+        $output = \Artisan::output();
+        return response('<pre style="background:#1e1e1e;color:#00ff00;padding:20px;font-size:14px;">
+✅ Migration Successful!
+
+' . htmlspecialchars($output) . '
+</pre>');
+    } catch (\Exception $e) {
+        return response('<pre style="background:#1e1e1e;color:#ff4444;padding:20px;font-size:14px;">
+❌ Migration Failed!
+
+' . htmlspecialchars($e->getMessage()) . '
+</pre>', 500);
+    }
+})->name('migrate.run');
+
+// Clear Cache, View & Route via URL (secured with key)
+Route::get('/clear_all', function () {
+    $secretKey = 'july2024secret'; // 🔑 এই key টা পরিবর্তন করো
+
+    if (request('key') !== $secretKey) {
+        abort(403, '🚫 Unauthorized! Secret key required.');
+    }
+
+    $results = [];
+
+    $commands = [
+        'cache:clear'  => '🗑️ Cache Clear',
+        'view:clear'   => '🖼️ View Clear',
+        'route:clear'  => '🛣️ Route Clear',
+        'config:clear' => '⚙️ Config Clear',
+    ];
+
+    foreach ($commands as $command => $label) {
+        try {
+            \Artisan::call($command);
+            $output = trim(\Artisan::output());
+            $results[] = "<span style='color:#00ff00'>✅ {$label}</span>: " . htmlspecialchars($output ?: 'Done!');
+        } catch (\Exception $e) {
+            $results[] = "<span style='color:#ff4444'>❌ {$label}</span>: " . htmlspecialchars($e->getMessage());
+        }
+    }
+
+    $body = implode("\n", $results);
+
+    return response("<pre style='background:#1e1e1e;color:#ffffff;padding:20px;font-size:14px;line-height:1.8;'>
+🚀 Clear All Results:
+
+{$body}
+</pre>");
+})->name('clear.all');
