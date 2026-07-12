@@ -41,52 +41,52 @@
     <!-- MAIN BRAND & NAVBAR -->
     <header class="sticky top-0 z-50 shadow-md">
         <!-- Brand Logo & Name Section (White Background) -->
-        <div class="bg-white/95 backdrop-blur-md border-b border-slate-200/80 px-4 sm:px-6 py-2">
+        <div class="bg-white/95 backdrop-blur-md border-b border-slate-200/80 px-4 sm:px-6 py-3 sm:py-3.5">
             <div class="max-w-6xl mx-auto flex items-center justify-between">
                 <a href="{{ route('home') }}" class="flex items-center gap-3 group">
                     <div class="flex items-center justify-center group-hover:scale-105 transition">
-                        <img src="{{ asset('logo-home.png') }}" alt="July Fighter Logo" class="h-9 sm:h-10 w-auto object-contain">
+                        <img src="{{ asset('logo-home.png') }}" alt="July Fighter Logo" class="h-10 sm:h-11 w-auto object-contain">
                     </div>
                     <div>
-                        <h1 class="text-sm sm:text-base font-extrabold text-[#00551c] leading-tight">রিবিল্ডিং বাংলাদেশ</h1>
-                        <p class="text-[10px] sm:text-[11px] font-semibold text-slate-500 tracking-wider">Rebuilding Bangladesh</p>
+                        <h1 class="text-base sm:text-lg font-extrabold text-[#00551c] leading-tight">রিবিল্ডিং বাংলাদেশ</h1>
+                        <p class="text-[11px] sm:text-xs font-semibold text-slate-500 tracking-wider">Rebuilding Bangladesh</p>
                     </div>
                 </a>
             </div>
         </div>
 
         <!-- Green Navigation Bar (Same as Topbar) -->
-        <div class="bg-[#00551c] text-white text-[11px] font-medium py-1 px-4 border-t border-emerald-800/50 shadow-inner">
+        <div class="bg-[#00551c] text-white text-xs font-medium py-2 sm:py-2.5 px-4 border-t border-emerald-800/50 shadow-inner">
             <div class="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-2 sm:gap-3">
                 <!-- Navigation Links -->
-                <nav class="flex flex-wrap items-center gap-4 sm:gap-5 text-[11px] sm:text-xs font-bold text-emerald-100">
-                    <a href="{{ route('home') }}" class="text-white hover:text-emerald-300 transition flex items-center justify-center py-0.5 px-1 rounded hover:bg-white/10" title="Home" style="color: #ffffff !important;">
+                <nav class="flex flex-wrap items-center gap-4 sm:gap-6 text-xs sm:text-[13px] font-bold text-emerald-100">
+                    <a href="{{ route('home') }}" class="text-white hover:text-emerald-300 transition flex items-center justify-center py-1 px-1 rounded hover:bg-white/10" title="Home" style="color: #ffffff !important;">
                         <svg class="w-4 h-4" fill="#ffffff" style="fill: #ffffff !important; color: #ffffff !important;" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                             <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
                         </svg>
                     </a>
-                    <a href="#about" class="hover:text-white transition">About</a>
-                    <a href="#priorities" class="hover:text-white transition">Priorities</a>
-                    <a href="#projects" class="hover:text-white transition">Projects</a>
-                    <a href="#gallery" class="hover:text-white transition">Gallery</a>
-                    <a href="#resources" class="hover:text-white transition">Resources</a>
-                    <a href="#sites" class="hover:text-white transition">Sites</a>
-                    <a href="#contact" class="hover:text-white transition">Contact</a>
+                    <a href="#about" class="hover:text-white transition py-0.5">About</a>
+                    <a href="#priorities" class="hover:text-white transition py-0.5">Priorities</a>
+                    <a href="#projects" class="hover:text-white transition py-0.5">Projects</a>
+                    <a href="#gallery" class="hover:text-white transition py-0.5">Gallery</a>
+                    <a href="#resources" class="hover:text-white transition py-0.5">Resources</a>
+                    <a href="#sites" class="hover:text-white transition py-0.5">Sites</a>
+                    <a href="#contact" class="hover:text-white transition py-0.5">Contact</a>
                 </nav>
 
                 <!-- Admin Access Button / Logged-in Badge -->
                 <div>
                     @if(Auth::guard('web')->check())
                         {{-- Admin is logged in — show badge with time --}}
-                        <div class="inline-flex items-center gap-2 rounded bg-white/10 border border-white/30 px-2.5 py-1 text-[11px] font-bold text-white shadow-sm">
+                        <div class="inline-flex items-center gap-2 rounded bg-white/10 border border-white/30 px-3 py-1.5 text-xs font-bold text-white shadow-sm">
                             <span class="flex items-center gap-1">
                                 <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
                                 <span class="text-emerald-200">Admin:</span>
                                 <span class="font-extrabold text-white">{{ Auth::guard('web')->user()->name ?? 'Admin' }}</span>
                             </span>
                             <span class="text-white/40">|</span>
-                            <span id="admin-live-time" class="font-mono text-[10px] text-emerald-200 tracking-wider"></span>
-                            <a href="{{ route('admin.dashboard') }}" class="ml-1 bg-emerald-400 hover:bg-emerald-300 text-[#00551c] font-extrabold px-2 py-0.5 rounded text-[10px] transition">
+                            <span id="admin-live-time" class="font-mono text-[11px] text-emerald-200 tracking-wider"></span>
+                            <a href="{{ route('admin.dashboard') }}" class="ml-1 bg-emerald-400 hover:bg-emerald-300 text-[#00551c] font-extrabold px-2.5 py-1 rounded text-xs transition">
                                 Dashboard →
                             </a>
                         </div>
@@ -106,7 +106,7 @@
                             })();
                         </script>
                     @else
-                        <a href="{{ route('admin.login') }}" class="inline-flex items-center justify-center rounded bg-white hover:bg-emerald-50 px-2.5 py-0.5 text-[11px] font-extrabold text-[#00551c] shadow-2xs transition transform hover:-translate-y-0.5 active:scale-95">
+                        <a href="{{ route('admin.login') }}" class="inline-flex items-center justify-center rounded bg-white hover:bg-emerald-50 px-3 py-1 text-xs font-extrabold text-[#00551c] shadow-2xs transition transform hover:-translate-y-0.5 active:scale-95">
                             Admin Access →
                         </a>
                     @endif
@@ -182,121 +182,192 @@
 
     <!-- NEW HOMEPAGE DESIGN (EXACT MATCH WITH SCREENSHOT) -->
     <main>
-        <!-- HERO BANNER SECTION (PHOTO CARD) -->
-        <section class="relative overflow-hidden bg-slate-900 flex items-center shadow-md" style="min-height: 50vh; background-image: url('{{ asset('photo-card1.jpg') }}'); background-size: cover; background-position: center 45%;">
-            <!-- Editorial Dark Gradient Overlay for High Readability -->
-            <div class="absolute inset-0 z-0" style="background: linear-gradient(to right, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.40) 35%, rgba(0, 0, 0, 0) 60%);"></div>
-
-            <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-10 sm:py-12 md:py-14 text-left w-full">
-                <div class="max-w-2xl space-y-5 sm:space-y-6">
-                    <h2 class="text-base sm:text-lg md:text-2xl lg:text-[26px] font-black text-white tracking-tight leading-[1.15] drop-shadow-md">
-                        আপনার অনুদান, একটি শিশুর<br class="hidden sm:inline"> জীবন বদলে দিতে পারে
+        <!-- HERO BANNER & CORE GOALS COMBINED SECTION (INSIDE PHOTO-CARD1.PNG) -->
+        <section class="relative overflow-hidden flex flex-col justify-center shadow-lg py-12 sm:py-16 md:py-20 lg:py-24" style="background-image: url('{{ asset('photo-card1.png') }}'); background-size: 100% 100%; background-repeat: no-repeat; background-position: center;">
+            <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 w-full space-y-10 sm:space-y-14 md:space-y-16">
+                <!-- Top Hero Text & Buttons -->
+                <div class="max-w-4xl space-y-3 sm:space-y-4">
+                    <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-[32px] font-black text-white tracking-tight leading-normal [text-shadow:_0_2px_12px_rgb(0_0_0_/_90%)]">
+                        আপনার অনুদান, একটি শিশুর জীবন বদলে দিতে পারে
                     </h2>
-                    <p class="text-xs sm:text-sm md:text-base font-bold leading-relaxed max-w-xl drop-shadow" style="color: #ffffff !important;">
+                    <p class="text-sm sm:text-base md:text-lg font-bold leading-relaxed max-w-3xl [text-shadow:_0_2px_8px_rgb(0_0_0_/_90%)]" style="color: #ffffff !important;">
                         আমরা সুবিধাবঞ্চিত শিশুদের জন্য শিক্ষা, চিকিৎসা ও নিরাপদ আশ্রয় নিশ্চিত করি।
                     </p>
                     <div class="pt-2 flex flex-wrap items-center gap-4">
-                        <a href="#projects" class="rounded-xl bg-white hover:bg-slate-100 text-slate-950 px-4 py-2.5 text-xs sm:text-sm font-bold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 active:scale-95 flex items-center justify-center" style="background-color: #ffffff; color: #0f172a;">
+                        <a href="#projects" class="rounded-xl bg-white hover:bg-slate-100 text-slate-950 px-6 py-3.5 text-sm sm:text-base font-bold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 active:scale-95 flex items-center justify-center" style="background-color: #ffffff; color: #0f172a;">
                             <span>আমাদের প্রজেক্টগুলো দেখুন</span>
                         </a>
-                        <a href="{{ route('volunteer.apply') }}" class="rounded-xl bg-transparent hover:bg-white/10 border-2 border-white text-white px-4 py-2.5 text-xs sm:text-sm font-bold transition-all duration-300 transform hover:-translate-y-0.5 active:scale-95 flex items-center justify-center" style="border-color: #ffffff; color: #ffffff;">
+                        <a href="{{ route('volunteer.apply') }}" class="rounded-xl bg-transparent hover:bg-white/10 border-2 border-white text-white px-6 py-3.5 text-sm sm:text-base font-bold transition-all duration-300 transform hover:-translate-y-0.5 active:scale-95 flex items-center justify-center" style="border-color: #ffffff; color: #ffffff;">
                             <span>স্বেচ্ছাসেবীর জন্য আবেদন</span>
                         </a>
+                    </div>
+                </div>
+
+                <!-- Core Goals Section inside Photo Banner -->
+                <div class="pt-4 sm:pt-6 border-t border-white/20">
+                    <!-- Section Heading -->
+                    <div class="text-center mb-6 sm:mb-8">
+                        <h3 class="text-xl sm:text-2xl md:text-[26px] font-extrabold text-white tracking-tight [text-shadow:_0_2px_12px_rgb(0_0_0_/_90%)]" style="color: #ffffff !important;">আমাদের মূল লক্ষ্য</h3>
+                    </div>
+
+                    <!-- 4 Cards Grid in ONE Row -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+                        
+                        <!-- Card 1: সুশিক্ষা -->
+                        <div class="rounded-2xl p-4 sm:p-5 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 shadow-2xl backdrop-blur-md" style="background-color: rgba(255, 255, 255, 0.96) !important; border: 1px solid rgba(255, 255, 255, 0.4) !important; border-radius: 16px !important;">
+                            <div>
+                                <div class="flex items-center gap-3 mb-3">
+                                    <div class="w-9 h-9 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center text-lg font-extrabold shrink-0" style="background-color: #eff6ff; color: #2563eb;">
+                                        📘
+                                    </div>
+                                    <h4 class="text-lg sm:text-xl font-extrabold text-slate-900 tracking-tight" style="color: #0f172a;">সুশিক্ষা</h4>
+                                </div>
+                                <h5 class="text-xs sm:text-sm font-bold text-slate-800 mb-1.5 leading-snug" style="color: #1e293b;">
+                                    মানসম্মত শিক্ষা প্রদান ও স্কুল স্থাপন
+                                </h5>
+                                <p class="text-[11px] sm:text-xs text-slate-600 leading-normal font-semibold" style="color: #475569;">
+                                    আমরা সুবিধাবঞ্চিত শিশুদের মানসম্মত শিক্ষা ও স্কুল স্থাপন নিশ্চিত করি।
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Card 2: সুস্বাস্থ্য -->
+                        <div class="rounded-2xl p-4 sm:p-5 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 shadow-2xl backdrop-blur-md" style="background-color: rgba(255, 255, 255, 0.96) !important; border: 1px solid rgba(255, 255, 255, 0.4) !important; border-radius: 16px !important;">
+                            <div>
+                                <div class="flex items-center gap-3 mb-3">
+                                    <div class="w-9 h-9 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center text-lg font-extrabold shrink-0" style="background-color: #f0fdf4; color: #0d9488;">
+                                        🩺
+                                    </div>
+                                    <h4 class="text-lg sm:text-xl font-extrabold text-slate-900 tracking-tight" style="color: #0f172a;">সুস্বাস্থ্য</h4>
+                                </div>
+                                <h5 class="text-xs sm:text-sm font-bold text-slate-800 mb-1.5 leading-snug" style="color: #1e293b;">
+                                    বিনামূল্যে চিকিৎসা ও ঔষধ বিতরণ
+                                </h5>
+                                <p class="text-[11px] sm:text-xs text-slate-600 leading-normal font-semibold" style="color: #475569;">
+                                    সুবিধাবঞ্চিত শিশুদের বিনামূল্যে চিকিৎসা সেবা ও প্রয়োজনীয় ঔষধ নিশ্চিত করি।
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Card 3: ত্রাণ ও পুনর্বাসন -->
+                        <div class="rounded-2xl p-4 sm:p-5 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 shadow-2xl backdrop-blur-md" style="background-color: rgba(255, 255, 255, 0.96) !important; border: 1px solid rgba(255, 255, 255, 0.4) !important; border-radius: 16px !important;">
+                            <div>
+                                <div class="flex items-center gap-3 mb-3">
+                                    <div class="w-9 h-9 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center text-lg font-extrabold shrink-0" style="background-color: #fefce8; color: #d97706;">
+                                        🤝
+                                    </div>
+                                    <h4 class="text-lg sm:text-xl font-extrabold text-slate-900 tracking-tight" style="color: #0f172a;">ত্রাণ ও পুনর্বাসন</h4>
+                                </div>
+                                <h5 class="text-xs sm:text-sm font-bold text-slate-800 mb-1.5 leading-snug" style="color: #1e293b;">
+                                    দুর্যোগপূর্ণ সময়ে জরুরি সহায়তা
+                                </h5>
+                                <p class="text-[11px] sm:text-xs text-slate-600 leading-normal font-semibold" style="color: #475569;">
+                                    দুর্যোগপূর্ণ মুহূর্তে প্রান্তিক মানুষের জন্য জরুরি ত্রাণ ও পুনর্বাসন সহায়তা প্রদান।
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Card 4: নিরাপদ পরিবেশ -->
+                        <div class="rounded-2xl p-4 sm:p-5 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 shadow-2xl backdrop-blur-md" style="background-color: rgba(255, 255, 255, 0.96) !important; border: 1px solid rgba(255, 255, 255, 0.4) !important; border-radius: 16px !important;">
+                            <div>
+                                <div class="flex items-center gap-3 mb-3">
+                                    <div class="w-9 h-9 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-lg font-extrabold shrink-0" style="background-color: #ecfdf5; color: #059669;">
+                                        🌱
+                                    </div>
+                                    <h4 class="text-lg sm:text-xl font-extrabold text-slate-900 tracking-tight" style="color: #0f172a;">নিরাপদ পরিবেশ</h4>
+                                </div>
+                                <h5 class="text-xs sm:text-sm font-bold text-slate-800 mb-1.5 leading-snug" style="color: #1e293b;">
+                                    শিশুদের জন্য নিরাপদ আশ্রয়
+                                </h5>
+                                <p class="text-[11px] sm:text-xs text-slate-600 leading-normal font-semibold" style="color: #475569;">
+                                    শিশুদের শারীরিক ও মানসিক বিকাশে একটি সুন্দর, নিরাপদ ও স্বাস্থ্যকর পরিবেশ তৈরি।
+                                </p>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- OUR CORE GOALS & STATS SECTION -->
-        <section class="mt-0 pt-14 sm:pt-16 md:pt-20 pb-28 sm:pb-36 md:pb-48 bg-[#f4faf6] border-y border-slate-200/80">
+        <!-- STATS BANNER SECTION BELOW HERO/GOALS BANNER -->
+        <section class="py-8 sm:py-10 bg-[#f4faf6] border-b border-slate-200/80">
             <div class="max-w-6xl mx-auto px-4 sm:px-6">
-                
-                <!-- Section Heading -->
-                <div class="text-center mb-6 sm:mb-8">
-                    <h3 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight" style="color: #0f172a;">আমাদের মূল লক্ষ্য</h3>
-                </div>
-
-                <!-- 3 Cards Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10">
+                <!-- Compact Green 'এক নজরে' Stats Banner (Exact Match with Screenshot) -->
+                <div class="rounded-2xl sm:rounded-3xl bg-[#034d35] px-5 sm:px-7 py-5 sm:py-6 text-white shadow-xl flex flex-col lg:flex-row items-center justify-between gap-6" style="background-color: #034d35 !important;">
                     
-                    <!-- Card 1: শিক্ষা -->
-                    <div class="rounded-2xl p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1" style="background-color: #ffffff !important; border: 1px solid #e2e8f0 !important; border-radius: 20px !important; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04) !important;">
-                        <div>
-                            <div class="flex items-center gap-3.5 mb-4">
-                                <div class="w-11 h-11 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center text-xl font-extrabold shrink-0" style="background-color: #eff6ff; color: #2563eb;">
-                                    📘
-                                </div>
-                                <h4 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight" style="color: #0f172a;">শিক্ষা</h4>
-                            </div>
-                            <h5 class="text-sm sm:text-base font-bold text-slate-800 mb-2 leading-snug" style="color: #1e293b;">
-                                মানসম্মত শিক্ষা প্রদান ও স্কুল স্থাপন
-                            </h5>
-                            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-semibold" style="color: #475569;">
-                                আমরা সুবিধাবঞ্চিত শিশুদের স্কুল স্থাপন, ও চিকিৎসা ও নিশ্চিত করি।
-                            </p>
+                    <!-- Left Title Block -->
+                    <div class="text-center lg:text-left shrink-0">
+                        <div class="flex items-center justify-center lg:justify-start gap-2 mb-1">
+                            <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                            <h3 class="text-lg sm:text-xl font-black text-white tracking-tight">এক নজরে</h3>
                         </div>
+                        <p class="text-xs sm:text-[13px] font-medium text-emerald-100/90 tracking-normal">
+                            আমাদের সেবার সংক্ষিপ্ত পরিসংখ্যান
+                        </p>
                     </div>
 
-                    <!-- Card 2: স্বাস্থ্য -->
-                    <div class="rounded-2xl p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1" style="background-color: #ffffff !important; border: 1px solid #e2e8f0 !important; border-radius: 20px !important; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04) !important;">
-                        <div>
-                            <div class="flex items-center gap-3.5 mb-4">
-                                <div class="w-11 h-11 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center text-xl font-extrabold shrink-0" style="background-color: #f0fdf4; color: #0d9488;">
-                                    🩺
-                                </div>
-                                <h4 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight" style="color: #0f172a;">স্বাস্থ্য</h4>
-                            </div>
-                            <h5 class="text-sm sm:text-base font-bold text-slate-800 mb-2 leading-snug" style="color: #1e293b;">
-                                বিনামূল্যে চিকিৎসা ক্যাম্প ও ঔষধ বিতরণ
-                            </h5>
-                            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-semibold" style="color: #475569;">
-                                আমরা সুবিধাবঞ্চিত শিশুদের জন্য শিক্ষা, চিকিৎসা ও নিরাপদ করি।
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Card 3: ত্রাণ ও পুনর্বাসন -->
-                    <div class="rounded-2xl p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1" style="background-color: #ffffff !important; border: 1px solid #e2e8f0 !important; border-radius: 20px !important; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04) !important;">
-                        <div>
-                            <div class="flex items-center gap-3.5 mb-4">
-                                <div class="w-11 h-11 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center text-xl font-extrabold shrink-0" style="background-color: #fefce8; color: #d97706;">
-                                    🤝
-                                </div>
-                                <h4 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight" style="color: #0f172a;">ত্রাণ ও পুনর্বাসন</h4>
-                            </div>
-                            <h5 class="text-sm sm:text-base font-bold text-slate-800 mb-2 leading-snug" style="color: #1e293b;">
-                                দুর্যোগপূর্ণ সময়ে জরুরি সহায়তা
-                            </h5>
-                            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-semibold" style="color: #475569;">
-                                দুর্যোগপূর্ণ সময়ে জরুরি সহায়তা। আমরা সাহায্য করি।
-                            </p>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- Stats Banner Below Cards -->
-                <div class="mt-12 sm:mt-14 mb-12 sm:mb-16 md:mb-20 rounded-3xl p-8 sm:p-12 text-center" style="background-color: #e6ece8 !important; border-radius: 24px !important; border: none !important; box-shadow: none !important;">
-                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 text-center">
+                    <!-- Right Stats Cards Group -->
+                    <div class="flex flex-wrap items-center justify-center lg:justify-end gap-3 sm:gap-4 w-full lg:w-auto">
                         
-                        <div>
-                            <div class="text-3xl sm:text-4xl md:text-5xl font-black mb-1.5 tracking-tight" style="color: #0f172a !important;">১০,০০০+</div>
-                            <div class="text-xs sm:text-sm md:text-base font-bold" style="color: #334155 !important;">সুবিধাবঞ্চিত শিশু</div>
+                        <!-- Stat Card 1 -->
+                        <div class="rounded-xl border border-emerald-400/30 bg-emerald-900/30 px-3.5 sm:px-4 py-2.5 flex items-center gap-3 transition-all duration-300 hover:bg-emerald-900/50 hover:border-emerald-400/60 shadow-sm shrink-0">
+                            <div class="w-9 sm:w-10 h-9 sm:h-10 rounded-lg bg-emerald-500/20 border border-emerald-400/30 flex items-center justify-center text-emerald-300 shrink-0">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                                </svg>
+                            </div>
+                            <div class="text-left">
+                                <div class="text-base sm:text-lg font-black text-white leading-tight">১০,০০০+</div>
+                                <div class="text-[11px] sm:text-xs font-bold text-emerald-100/90 leading-tight">সুবিধাবঞ্চিত শিশু</div>
+                            </div>
                         </div>
 
-                        <div>
-                            <div class="text-3xl sm:text-4xl md:text-5xl font-black mb-1.5 tracking-tight" style="color: #0f172a !important;">৫০+</div>
-                            <div class="text-xs sm:text-sm md:text-base font-bold" style="color: #334155 !important;">সফল প্রজেক্ট</div>
+                        <!-- Stat Card 2 -->
+                        <div class="rounded-xl border border-emerald-400/30 bg-emerald-900/30 px-3.5 sm:px-4 py-2.5 flex items-center gap-3 transition-all duration-300 hover:bg-emerald-900/50 hover:border-emerald-400/60 shadow-sm shrink-0">
+                            <div class="w-9 sm:w-10 h-9 sm:h-10 rounded-lg bg-emerald-500/20 border border-emerald-400/30 flex items-center justify-center text-emerald-300 shrink-0">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                            <div class="text-left">
+                                <div class="text-base sm:text-lg font-black text-white leading-tight">৫০+</div>
+                                <div class="text-[11px] sm:text-xs font-bold text-emerald-100/90 leading-tight">সফল প্রজেক্ট</div>
+                            </div>
                         </div>
 
-                        <div>
-                            <div class="text-3xl sm:text-4xl md:text-5xl font-black mb-1.5 tracking-tight" style="color: #0f172a !important;">৫০০+</div>
-                            <div class="text-xs sm:text-sm md:text-base font-bold" style="color: #334155 !important;">সক্রিয় ভলান্টিয়ার</div>
+                        <!-- Stat Card 3 -->
+                        <div class="rounded-xl border border-emerald-400/30 bg-emerald-900/30 px-3.5 sm:px-4 py-2.5 flex items-center gap-3 transition-all duration-300 hover:bg-emerald-900/50 hover:border-emerald-400/60 shadow-sm shrink-0">
+                            <div class="w-9 sm:w-10 h-9 sm:h-10 rounded-lg bg-emerald-500/20 border border-emerald-400/30 flex items-center justify-center text-emerald-300 shrink-0">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                </svg>
+                            </div>
+                            <div class="text-left">
+                                <div class="text-base sm:text-lg font-black text-white leading-tight">৫০০+</div>
+                                <div class="text-[11px] sm:text-xs font-bold text-emerald-100/90 leading-tight">সক্রিয় ভলান্টিয়ার</div>
+                            </div>
                         </div>
 
-                        <div>
-                            <div class="text-3xl sm:text-4xl md:text-5xl font-black mb-1.5 tracking-tight" style="color: #0f172a !important;">১৫+</div>
-                            <div class="text-xs sm:text-sm md:text-base font-bold" style="color: #334155 !important;">জেলা জুড়ে কার্যক্রম</div>
+                        <!-- Stat Card 4 -->
+                        <div class="rounded-xl border border-emerald-400/30 bg-emerald-900/30 px-3.5 sm:px-4 py-2.5 flex items-center gap-3 transition-all duration-300 hover:bg-emerald-900/50 hover:border-emerald-400/60 shadow-sm shrink-0">
+                            <div class="w-9 sm:w-10 h-9 sm:h-10 rounded-lg bg-emerald-500/20 border border-emerald-400/30 flex items-center justify-center text-emerald-300 shrink-0">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
+                            </div>
+                            <div class="text-left">
+                                <div class="text-base sm:text-lg font-black text-white leading-tight">১৫+</div>
+                                <div class="text-[11px] sm:text-xs font-bold text-emerald-100/90 leading-tight">জেলা জুড়ে কার্যক্রম</div>
+                            </div>
+                        </div>
+
+                        <!-- Trend Chart Icon Badge (Like Screenshot Right Arrow Box) -->
+                        <div class="hidden xl:flex items-center justify-center w-10 h-10 rounded-xl bg-emerald-800/40 border border-emerald-500/30 text-emerald-300 shrink-0 ml-1" title="Realtime Statistics">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                            </svg>
                         </div>
 
                     </div>
